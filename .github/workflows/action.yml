@@ -14,6 +14,7 @@ on:
   push:
     paths:
       - '**.dwnld'
+  workflow_dispatch:
       
 jobs:
   install:
@@ -26,7 +27,7 @@ jobs:
         run: |
           curl -LO "http://www.gc-forever.com/datfile/gc.dat"
       - name: Upload File
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: "File"
           path: "gc.dat"
